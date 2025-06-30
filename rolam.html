@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rólam | Deli Márk - Személyi edző</title>
+    <link rel="stylesheet" href="rolam.css">
+    <link rel="stylesheet" href="rolamprint.css" media="print">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <a href="#maincontent" class="skip-link"><em>Ugrás a tartalomra</em></a>
+    <header>
+        <button id="highContrastToggle" class="contrast-icon-btn" aria-label="Nagy kontrasztú mód">👁</button>
+        <div class="top-bar">
+            <div class="slogan">A siker a komfortzónádon túl vár!</div>
+            <button class="hamburger-menu" aria-label="Menü">☰</button>
+            <nav class="nav-buttons">
+                <a href="index.html">Kezdőlap</a>
+                <a href="rolam.html" class="active">Rólam</a>
+                <a href="kapcsolat.html">Kapcsolat</a>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" target="_blank"><img src="insta.png" alt="Instagram"
+                            class="icon"></a>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="face.png" alt="Facebook"
+                            class="icon"></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <h1><strong>Több mint egy edző – motivátor, mentor, támasz</strong></h1>
+            <p>
+                Szia, Deli Márk vagyok, személyi edző. Az edzés mindig is az életem része volt, és szenvedélyem mások
+                segítése abban, hogy elérjék a céljaikat.
+                Hiszem, hogy a mozgás nemcsak a külsőnket, hanem az életminőségünket is javítja. A célom, hogy segítsek
+                neked megerősödni – testben és
+                lélekben egyaránt!
+            </p>
+        </section>
+
+        <section class="experience">
+            <h2><strong>Szakmai tapasztalat és végzettségek</strong></h2>
+            <p>
+                Nemzetközi személyi edző végzettséggel rendelkezem, és több éves tapasztalattal segítem a klienseimet
+                izomépítésben, fogyásban és
+                teljesítménynövelésben. Edzőként a tudományosan alátámasztott módszereket ötvözöm a motivációval és a
+                személyre szabott megközelítéssel.
+            </p>
+        </section>
+
+        <section class="services">
+            <h2><strong>Szolgáltatások</strong></h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <h3>Izomnövelés és erőfejlesztés</h3>
+                    <p>
+                        Tudományosan alátámasztott edzésmódszerek, hogy izmot építs és erősebbé válj.
+                    </p>
+                    <div class="icon-container">
+                        <img src="strength.png" alt="Izomépítés" class="service-icon">
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Fogyás és zsírégetés</h3>
+                    <p>
+                        Személyre szabott edzéstervek és táplálkozási tanácsok, hogy hatékonyan és egészségesen érj el
+                        tartós eredményeket.
+                    </p>
+                    <div class="icon-container">
+                        <img src="calories.png" alt="Fogyás" class="service-icon">
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Testformálás és állóképesség fejlesztés</h3>
+                    <p>
+                        Ha szeretnéd fejleszteni az állóképességed és energikusabbnak érezni magad a mindennapokban, itt
+                        a helyed!
+                    </p>
+                    <div class="icon-container">
+                        <img src="stamina.png" alt="Állóképesség" class="service-icon">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="nutrition">
+            <h2><strong>Nem csak edzés – a táplálkozás is számít!</strong></h2>
+            <div class="nutrition-container">
+                <div class="nutrition-text">
+                    <p>
+                        A tartós eredményekhez nem elég a megfelelő edzés – az étrended is kulcsszerepet játszik.
+                        Dietetikusi végzettségemmel segítek egy személyre szabott, fenntartható étrend kialakításában,
+                        amely támogatja az edzéseidet és az egészséged. Legyen szó fogyásról, izomnövelésről vagy
+                        egyszerűen egy egészségesebb életmódról, minden szükséges segítséget megkapsz egy helyen!
+                    </p>
+                </div>
+                <div class="call-to-action">
+                    <p>Készen állsz a változásra? Foglalj időpontot egy ingyenes konzultációra!</p>
+                    <a href="kapcsolat.html" class="button"><strong>Foglalok</strong></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navButtons = document.querySelector('.nav-buttons');
+
+        hamburgerMenu.addEventListener('click', (event) => {
+            event.stopPropagation();
+            navButtons.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.nav-buttons') && !event.target.closest('.hamburger-menu')) {
+                navButtons.classList.remove('open');
+            }
+        });
+
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+        });
+
+        document.getElementById('highContrastToggle').addEventListener('click', function () {
+            document.body.classList.toggle('high-contrast');
+            this.classList.toggle('active');
+            localStorage.setItem('highContrast', document.body.classList.contains('high-contrast'));
+        });
+
+        if (localStorage.getItem('highContrast') === 'true') {
+            document.body.classList.add('high-contrast');
+            document.getElementById('highContrastToggle').classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolat | Deli Márk - Személyi edző</title>
+    <link rel="stylesheet" href="kapcsolat.css">
+    <link rel="stylesheet" href="kapcsolatprint.css" media="print">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <a href="#maincontent" class="skip-link">Ugrás a tartalomra</a>
+    <header>
+        <button id="highContrastToggle" class="contrast-icon-btn" aria-label="Nagy kontrasztú mód">👁</button>
+        <div class="top-bar">
+            <div class="slogan">A siker a komfortzónádon túl vár!</div>
+            <button class="hamburger-menu" aria-label="Menü" onclick="toggleMenu()">☰</button>
+            <nav class="nav-buttons" id="navButtons">
+                <a href="index.html">Kezdőlap</a>
+                <a href="rolam.html">Rólam</a>
+                <a href="kapcsolat.html" class="active">Kapcsolat</a>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" target="_blank"><img src="insta.png" alt="Instagram"
+                            class="icon"></a>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="face.png" alt="Facebook"
+                            class="icon"></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <section class="contact-container">
+            <div class="contact-form">
+                <h1>Vedd fel velem a kapcsolatot, és kezdjük el együtt az utadat!</h1>
+
+                <form id="contactForm" onsubmit="sendEmail(event)">
+                    <div class="form-group">
+                        <label for="name"><strong>Név</strong></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><strong>E-mail cím</strong></label>
+                        <input type="email" id="email" name="email" placeholder="pl.: pelda@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone"><strong>Telefonszám</strong></label>
+                        <input type="tel" id="phone" name="phone" placeholder="pl.: +36 70 123 4567" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service"><strong>Szolgáltatás</strong></label>
+                        <select id="service" name="service">
+                            <option value="" disabled selected>Válassz szolgáltatást</option>
+                            <option value="Izomnövelés és erőfejlesztés">Izomnövelés és erőfejlesztés</option>
+                            <option value="Fogyás és zsírégetés">Fogyás és zsírégetés</option>
+                            <option value="Testformálás és állóképesség fejlesztés">Testformálás és állóképesség
+                                fejlesztés</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label><strong>Kommunikáció nyelve</strong></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="language" value="magyar" checked>
+                                Magyar
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="language" value="angol">
+                                Angol
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message"><strong>Megjegyzés</strong></label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="consent" required>
+                            <strong>Az űrlap elküldésével beleegyezem, hogy az adataimat kapcsolatfelvétel céljából
+                            felhasználják.</strong>
+                        </label>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="button"><strong>Elküld</strong></button>
+                        <button type="reset" class="button reset-button"><strong>Töröl</strong></button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+        <section class="pricing-section">
+    <details>
+        <summary><strong>Árak és csomagok megtekintése</strong></summary>
+        <div class="pricing-table">
+            <table>
+                <caption>Edzéscsomagok és áraik</caption>
+                <thead>
+                    <tr>
+                        <th>Csomag típusa</th>
+                        <th>Bővebb leírás</th>
+                        <th>Ár</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Egy alkalmas edzés - felnőtt</td>
+                        <td>Személyre szabott edzés felnőtteknek, egyszeri alkalom</td>
+                        <td>4.990 Ft</td>
+                    </tr>
+                    <tr>
+                        <td>Egy alkalmas edzés - diák</td>
+                        <td>Személyre szabott edzés diákoknak, egyszeri alkalom</td>
+                        <td>4.490 Ft</td>
+                    </tr>
+                    <tr>
+                        <td>10 alkalmas bérlet - felnőtt</td>
+                        <td>10 alkalomra szóló bérlet felnőtteknek, 60 napig érvényes</td>
+                        <td>44.990 Ft</td>
+                    </tr>
+                    <tr>
+                        <td>10 alkalmas bérlet - diák</td>
+                        <td>10 alkalomra szóló bérlet diákoknak, 60 napig érvényes</td>
+                        <td>39.990 Ft</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </details>
+</section>
+
+
+        <div class="video-section">
+            <video controls poster="borito.png" width="640" height="360">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="video-transcript">
+            <details>
+                <summary>
+                    <span class="transcript-title">Videó felirat időbélyegekkel</span>
+                    <span class="transcript-toggle">(Kattints a részletekért)</span>
+                </summary>
+                <div class="transcript-content">
+                    <div class="transcript-timeline">
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:01.550</span>
+                            <span class="transcript-text">A "STRENGTH" (ERŐ) szó megjelenik képernyőn vastag
+                                betűtípussal, lebegő beúszó effekttel</span>
+                        </div>
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:03.909</span>
+                            <span class="transcript-text">Narráció: "The ability to withstand great force or pressure" -
+                                lassított felvétel súlyemelésről</span>
+                        </div>
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:08.530</span>
+                            <span class="transcript-text">"To attain true strength one must be resilient" - átváltás egy
+                                sikertelen emelésről a felállásra</span>
+                        </div>
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:11.980</span>
+                            <span class="transcript-text">"Accept inevitable failure" - közeli kép az edző eltökélt
+                                arcáról, verejtékkel</span>
+                        </div>
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:17.860</span>
+                            <span class="transcript-text">"Use it as fuel on the road to success" - edzésmontázs
+                                kezdődik</span>
+                        </div>
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:21.360</span>
+                            <span class="transcript-text">"The mind is the most powerful force" - szövegfelirat
+                                agyképekkel</span>
+                        </div>
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:27.180</span>
+                            <span class="transcript-text">"That version of yourself awaits" - átalakulás előtti-utáni
+                                összehasonlítás</span>
+                        </div>
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:31.449</span>
+                            <span class="transcript-text">"Take courage and take that first step" - az edző edzésbe
+                                kezd</span>
+                        </div>
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:38.780</span>
+                            <span class="transcript-text">"If you're waiting until you're ready, don't" - remegő
+                                animációval megjelenő szöveg</span>
+                        </div>
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:40.930</span>
+                            <span class="transcript-text">"Slow progress is better than no progress" - fokozatosan
+                                kitöltődő haladásmérő</span>
+                        </div>
+                        <div class="transcript-item">
+                            <span class="timestamp">00:00:46.989</span>
+                            <span class="transcript-text">Záró üzenet: "Believe that" - logó megjelenése és motivációs
+                                zene csúcspontja</span>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navButtons = document.getElementById('navButtons');
+            navButtons.classList.toggle('open');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('loaded');
+        });
+
+        function sendEmail(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const serviceElement = document.getElementById('service');
+            const service = serviceElement.value;
+
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                alert("Kérem, adjon meg érvényes formátumú email címet (pl.: nev@domain.hu)!");
+                return;
+            }
+
+            const phoneRegex = /^(\+36|06)[\s-]?(20|30|70)[\s-]?(\d{3}[\s-]?\d{4}|\d{7})$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Kérem, adjon meg érvényes telefonszámot (+36/06 és 20/30/70 formátumban + 7 számjegy)!");
+                return;
+            }
+
+            if (!service) {
+                alert("Kérem, válasszon egy szolgáltatást a listából!");
+                return;
+            }
+
+            const serviceText = serviceElement.options[serviceElement.selectedIndex].text;
+
+            const languageElements = document.getElementsByName('language');
+            let language = "";
+            for (let i = 0; i < languageElements.length; i++) {
+                if (languageElements[i].checked) {
+                    language = languageElements[i].value;
+                    break;
+                }
+            }
+
+            const message = document.getElementById('message').value;
+
+            const recipientEmail = "markdeli.bsn@gmail.com";
+            const subject = "Kapcsolatfelvétel - " + name;
+            let body = "Név: " + name + "\n";
+            body += "Email: " + email + "\n";
+            body += "Telefon: " + phone + "\n";
+            body += "Szolgáltatás: " + serviceText + "\n";
+            body += "Nyelv: " + language + "\n\n";
+            body += "Üzenet:\n" + message;
+
+            const mailtoLink = "mailto:" + encodeURIComponent(recipientEmail) +
+                "?subject=" + encodeURIComponent(subject) +
+                "&body=" + encodeURIComponent(body);
+
+            window.location.href = mailtoLink;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('loaded');
+
+            document.getElementById('highContrastToggle').addEventListener('click', function () {
+                document.body.classList.toggle('high-contrast');
+                this.classList.toggle('active');
+                localStorage.setItem('highContrast', document.body.classList.contains('high-contrast'));
+            });
+
+            if (localStorage.getItem('highContrast') === 'true') {
+                document.body.classList.add('high-contrast');
+                document.getElementById('highContrastToggle').classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kezdőlap | Deli Márk - Személyi edző</title>
+    <link rel="stylesheet" href="kezdolap.css">
+    <link rel="stylesheet" href="indexprint.css" media="print">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <a href="#maincontent" class="skip-link">Ugrás a tartalomra</a>
+    <header>
+    <button id="highContrastToggle" class="contrast-icon-btn" aria-label="Nagy kontrasztú mód">👁</button>
+    <div class="top-bar">
+        <div class="slogan">A siker a komfortzónádon túl vár!</div>
+        <button class="hamburger-menu" aria-label="Menü">☰</button>
+        <nav class="nav-buttons">
+            <a href="index.html" class="active">Kezdőlap</a>
+            <a href="rolam.html">Rólam</a>
+            <a href="kapcsolat.html">Kapcsolat</a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/"><img src="insta.png" alt="Instagram" class="icon"></a>
+                <a href="https://www.facebook.com/"><img src="face.png" alt="Facebook" class="icon"></a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="hero">
+        <div class="hero-text">
+            <p>
+                Nincs több kifogás, csak eredmények! Ha szeretnéd elérni a céljaidat, itt az idő, hogy elkezdd. Velem
+                garantáltan fejlődni fogsz, de az első lépést neked kell megtenned!
+            </p>
+            <a href="rolam.html" class="button"><strong>Tudj meg többet!</strong></a>
+        </div>
+        <div class="hero-images-container">
+            <div class="hero-images">
+                <img src="kezdolap.jpg" alt="Profilkép-1" class="image top-left thumbnail">
+                <img src="kezdolap2.jpg" alt="Profilkép-2" class="image bottom-right thumbnail">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navButtons = document.querySelector('.nav-buttons');
+
+        hamburgerMenu.addEventListener('click', (event) => {
+            event.stopPropagation();
+            navButtons.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.nav-buttons') && !event.target.closest('.hamburger-menu')) {
+                navButtons.classList.remove('open');
+            }
+        });
+
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+        });
+
+        document.getElementById('highContrastToggle').addEventListener('click', function () {
+            document.body.classList.toggle('high-contrast');
+            this.classList.toggle('active');
+            localStorage.setItem('highContrast', document.body.classList.contains('high-contrast'));
+        });
+
+        if (localStorage.getItem('highContrast') === 'true') {
+            document.body.classList.add('high-contrast');
+            document.getElementById('highContrastToggle').classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>

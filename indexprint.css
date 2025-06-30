@@ -1,0 +1,106 @@
+@media print {
+    .slogan {
+        background: none !important;
+        -webkit-text-fill-color: black !important;
+        color: black !important;
+        text-shadow: none !important;
+        background-clip: initial !important;
+    }
+
+    .social-icons {
+        display: none !important;
+    }
+
+    .high-contrast * {
+        color: black !important;
+        background: white !important;
+        border-color: #222 !important;
+    }
+
+
+    img,
+    .image {
+        max-width: 150px !important;
+        height: auto !important;
+        border: 1px solid #ddd !important;
+        margin: 5px auto !important;
+        display: block !important;
+    }
+
+
+    .video-section,
+    .video-transcript {
+        display: none !important;
+    }
+
+
+    .button {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #222 !important;
+        box-shadow: none !important;
+        text-decoration: none !important;
+    }
+
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        border: 1px solid #ccc !important;
+        background: white !important;
+        color: black !important;
+        padding: 2px 5px !important;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+
+    @page {
+        margin: 1cm;
+    }
+
+    body {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+
+    a {
+        color: black !important;
+        text-decoration: underline !important;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+
+    .nav-buttons a:after {
+        content: "" !important;
+    }
+
+
+    header {
+        border-bottom: 1px solid #222 !important;
+        padding-bottom: 5px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    section,
+    .service-card {
+        page-break-inside: avoid;
+    }
+
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
